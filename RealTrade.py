@@ -43,7 +43,8 @@ class Consumer(threading.Thread):
                     C = self.buy.popleft()
                     
                     price_open = self.q.get()
-
+                    time.sleep(0.1)
+                    
                     if price_open != C:
                         self.buy.append(B)
                         self.buy.append(C)
