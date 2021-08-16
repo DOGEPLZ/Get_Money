@@ -139,7 +139,7 @@ class Producer(threading.Thread):
     
     def run(self):
         while True:
-            df = pyupbit.get_ohlcv("KRW-BTC", interval = 'minute15', to = '20221231 22:00:00')
+            df = pyupbit.get_ohlcv("KRW-BTC", interval = 'minute15')
             price = df.iloc[-1][0]
             self.q.put(price)
             time.sleep(0.1)
